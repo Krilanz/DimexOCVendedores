@@ -1,0 +1,605 @@
+.claro-club-logo-adhesion {
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.claro-club-logo-adhesion img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.claro-club-cont-violeta {
+    background-color: #702874;
+    padding: 25px 20px;
+}
+.claro-club-cont-violeta .txt-blanco a {
+  text-decoration: underline;
+}
+.claro-club-cont-violeta .txt-blanco a:visited {
+  color:#ffffff;
+}
+.claro-club-cont-gris {
+  background-color: #EBEBEB;
+  padding: 25px 20px;
+}
+.claro-club-cont-verde {
+  background-color: #DFF0D8;
+  padding: 25px 20px;
+}
+.btn-adherirme-activado {
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    padding: 7px 45px;
+    color: #222222;
+    margin-left: 0px;
+    cursor: cursor;
+}
+.btn-adherirme-desactivado {
+    border: none;
+    background-color: #AB89A8;
+    border-radius: 3px;
+    padding: 7px 45px;
+    color: #702874;
+    margin-left: 0px;
+    cursor: no-drop;
+}
+
+.flex-mismo-alto {
+    display: flex;
+    display: -ms-flexbox;
+    align-items: stretch;
+    -ms-flex-align: stretch;
+    align-content:space-between;
+    -ms-flex-pack: justify;
+}
+.flex-mismo-alto .componente {
+    order:1;
+    -ms-flex-order:1;
+    flex: 1;
+}
+.flex-mismo-alto, .flex-mismo-alto > div[class*='col-'] { 
+    display: flex; 
+    display: -ms-flexbox;
+}
+.flex-mismo-alto .componente { 
+    display: flex;
+    display: -ms-flexbox;
+    flex: 1; 
+    flex-flow: column nowrap;
+    -ms-flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    padding:0;   
+    padding-bottom: 0;
+    webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.flex-mismo-alto .componente-gris {
+    background-color: #EBEBEB;
+}
+.flex-mismo-alto .componente-blanco {
+  background-color:#fff;
+  box-shadow: none;
+  align-items: center;
+  -ms-flex-align: center;
+  flex-flow: row;
+  -ms-flex-direction: row;
+}
+.flex-mismo-alto .componente-body { 
+    flex-grow: 1; 
+    padding: 15px;
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    -ms-flex-align: center;
+}
+.flex-mismo-alto .msj-gral {
+    display: flex;
+    display: -ms-flexbox;
+    align-content: center;
+    -ms-flex-align: center;
+    align-items: flex-start;
+    -ms-flex-align: flex-start;
+    justify-content: center;
+    -ms-flex-pack: center;
+}
+.flex-mismo-alto .msj-gral .icono {
+    padding-right: 20px;
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    -ms-flex-align: center;
+}
+.flex-mismo-alto .msj-gral .icono i {
+    margin: 0px;
+    font-size: 3.37rem;
+    line-height: 3.37rem;
+}
+.flex-mismo-alto .btn-grande-ancho {
+    margin:0px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+#claroClub ul {
+  list-style-type: none;
+}
+
+.claroclub-pasos-cont-horizontal {
+  -js-display: flex;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-direction: row;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  width: 100%;
+  list-style-type: none;
+  position: relative;
+  border: 1px solid #ABAFB0;
+  padding: 15px 0;
+  margin: 0;
+}
+.paso-cont {
+  position: relative;
+  padding: 10px 15px;
+  background-color: #fff;
+  z-index: 2;
+  -js-display: flex;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-direction: row;
+  align-items: center;
+  -ms-flex-align: center;
+}
+.claro-club-cont-gris .form-control {
+  z-index: 30;
+}
+.active .numero-cont {
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  border-radius: 25px;
+  display: flex;
+  display: ms-flex;
+  align-items: center;
+  -ms-flex-align: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  background-color: #222222;
+  color: #FFFFFF;
+  text-align: center;
+}
+.active .numero-cont i {
+  display: none;
+}
+.active .numero-cont p {
+  color: #fff;
+  font-weight: 700;
+}
+.active .text-cont {
+  color: #222222;
+}
+.finished .paso {
+  background: #702874;
+  color: #FFFFFF;
+}
+.finished .numero-cont {
+  background-color: #0F7806;
+}
+.finished .numero-cont i, .finished .numero-cont p {
+  display: none;
+}
+.finished .numero-cont .fa-check {
+  display: inherit;
+}
+.finished .paso-cont p {
+  color: #0F7806;
+  font-weight: 400;
+}
+.disable .numero-cont {
+  background-color: #DDDDDD;
+}
+.disable .numero-cont i {
+  display: none;
+}
+.disable .paso-cont p {
+  color: #858585;
+  font-weight: 400;
+}
+.disable p {
+  color: #858585;
+}
+
+.alerta .numero-cont {
+  background-color: #B7202E;
+}
+.alerta .numero-cont i, .alerta .numero-cont p {
+  display: none;
+}
+.alerta .numero-cont .fa-exclamation {
+  display: inherit;  
+  color:#fff;
+}
+.alerta .paso-cont p {
+  color: #B7202E;
+  font-weight: 400;
+}
+
+.error .numero-cont {
+  background-color: #B7202E;
+}
+.error .numero-cont i, .error .numero-cont p {
+  display: none;
+}
+.error .numero-cont .fa-times {
+  display: inherit;  
+  color:#fff;
+}
+.error .paso-cont p {
+  color: #B7202E;
+  font-weight: 400;
+}
+
+.claroclub-pasos-cont-horizontal .linea {
+  position: absolute;
+  left:0;
+  top:50%;
+  z-index: 1;
+  border-top: 1px solid #858585;
+  width: 100%;
+  height: 1px;
+}
+.claroclub-pasos-cont-vertical {
+  list-style-type: none;
+}
+.claroclub-pasos-cont-vertical  .paso-cont {
+  justify-content: flex-start;
+  -ms-flex-pack: justify;
+  margin-left: -20px;
+}
+.claroclub-pasos-cont-vertical .linea {
+  position: absolute;
+  left:22px;
+  top:0;
+  z-index: 1;
+  border-left: 1px solid #858585;
+  width: 1px;
+  height: 100%;
+  padding-bottom: 20px;
+}
+.claroclub-pasos-cont-vertical .paso-3{
+  background-color: #fff;
+  z-index: 200;
+  position: relative;
+}
+.beneficions-cont ul {
+  display: flex;
+  display: ms-flex;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.familySelector .contenedor-gris {
+  padding-top: 0px !important;
+  padding-bottom: 7px;
+}
+
+.familySelector select {
+  width: 49% !important;
+  margin-right:1%;
+  height: 35px;
+}
+.familySelector .input-group {
+  width: 49% !important;
+  margin-left:1% !important;
+}
+
+.tabla-secundaria tr th {
+    background-color: #222222 !important;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.tabla-secundaria td p {
+  white-space: initial !important;
+}
+.tabla-secundaria tr td:nth-child(1) {
+    text-transform: initial;
+}
+
+tr {
+    background-color: #F9F9F9;
+}
+.table-striped {
+  width: 100% !important;
+}
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: #DDDDDD;
+}
+.table-striped .claro-club-agotado td {
+    background-color: #F2DEDE !important;
+    color:#af272f;
+}
+.table-striped .claro-club-agotado p {
+    color:#af272f;
+}
+.table-striped .claro-club-agotado .btn-rojo {
+    pointer-events: none;
+}
+.table-striped .claro-club-credito p {
+    color:#af272f;
+}
+.table-striped .claro-club-credito {
+  color:#0F7806;
+}
+.table-striped .claro-club-credito p {
+  color:#0F7806;
+}
+.table-striped .claro-club-ptos-tabla {
+  text-align: right !important;
+}
+.table-striped .claro-club-inactivo td {   
+    color: #858585;
+}
+.table-striped .claro-club-inactivo p {
+    color:#858585;
+}
+
+.claro-club-paso-atras {
+  margin-right: 15px;
+  display: inline-block;
+}
+.msj-secundario-error-un .claro-club-paso-atras {
+  color: #1F97AE;
+  text-decoration: none;
+}
+
+.input-group {
+  width: 100% !important;
+  margin: initial !important;
+}
+.input-group .form-control  {
+  border-radius: 0 !important;
+}
+.input-group .btn-negro:hover, .input-group .btn-negro:visited, .input-group .btn-negro:focus {
+    color:#ffffff;
+}
+
+.qr-cont {
+  display: flex; 
+  flex-wrap: wrap; 
+}
+.qr-cont .imagen {
+  background-color: #ffffff;
+  padding: 5px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  width: 170px;
+}
+.qr-cont .qr-claro {
+  width: 100%;
+  padding:0;
+}
+
+.claro-club-banner {
+  padding: 0;
+  border:1px solid #ABAFB0;
+}
+.claro-club-banner .claro-club-puntos-cont {
+  min-width: 100%;
+  padding: 0 15px;
+}
+.claro-club-banner  .claro-club-logo {
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.claro-club-banner  .claro-club-logo img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.claro-club-banner .padding-medio {
+  padding:15px 25px;
+}
+.claro-club-banner .flex-mismo-alto-interno  {
+  -js-display: flex;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-direction: row;
+  justify-content: space-around;
+  -ms-flex-pack: justify;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+}
+.claro-club-banner .claro-club-puntos {
+  border-top:1px solid #ABAFB0;
+  padding-top: 10px;
+}
+.claro-club-banner .flex-mismo-alto-interno .componente {
+  padding: 10px 15px;
+}
+.claro-club-banner-imagen {    
+  	background-size: cover; 
+    background-position: center; 
+    min-height: 200px; 
+    height: 100%;
+} 
+/*====*/ 
+
+#claroClub .mi-categoria-icono {
+  vertical-align: initial;
+}
+table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after {
+  bottom: 8px;
+  right: 8px;
+  font-size: 15px;
+}
+/*==== COrreccion para boton.css =====*/
+  @media (max-width: 767px) and (max-width: 979px) {
+      .aui .btn {
+        padding: 6px 12px !important;
+        margin-top: 0 !important;
+        font-size: 14px !important;
+      }
+  }
+  @media (max-width: 979px) {
+      .aui .btn {
+        padding: 6px 12px !important;
+        margin-top: 0 !important;
+        font-size: 14px !important;
+      }
+  }
+
+/*==== MODAL ====*/
+  .modal-content .input-group .btn-negro {
+    padding: 7px 12px;
+    min-width: 80px;
+    color:#ffffff;
+  }
+  .modal-content .input-group .btn-negro:hover {
+      background-color: #111111 !important;
+  }
+  .modal-content .input-group input {
+    z-index: 30;
+  }
+  .modal-purpura a {
+    color: #ffffff;
+  }
+  #claroClub .titulo-error {
+    margin-left: 0;
+    color: #222222;
+  }
+  
+/*====*/
+
+@media (max-width: 992px){
+    html[data-useragent*='MSIE 10.0']  .flex-mismo-alto > div[class*='col-'] {
+        max-width:100%;
+        margin-right: 0%;
+        display: inline-block;
+    }
+    html[data-useragent*='MSIE 10.0']  .flex-mismo-alto > div[class*='col-'] + div[class*='col-'] {
+        max-width:100%;
+        margin-left: 0%;
+        display: inline-block;
+    }
+    html[data-useragent*='MSIE 10.0']  .flex-mismo-alto .texto {
+        width: 80% !important;
+    }
+ }
+@media (max-width: 768px) {
+  .claro-club-logo-adhesion {
+      max-width: 200px;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+    .claroclub-pasos-cont-horizontal li {
+      margin-bottom: 20px;
+    }
+    .claroclub-pasos-cont-horizontal .linea {
+      position: absolute;
+      left:20px;
+      top:0;
+      z-index: 1;      
+      border-left: 1px dashed #858585;
+      border-top: 0px dashed #858585;
+      width: 1px;
+      height: 800px;
+    }
+    .info-cont {
+      padding-left: 20px;
+    }
+    .claroclub-pasos-cont-vertical li > .visible-xs {
+      display: flex !important;
+    }
+    .familySelector select {
+      width: 100% !important;
+      margin:0 !important;
+      height: 35px;
+    }
+    .familySelector .input-group {
+      width: 100% !important;
+      margin:0 !important;
+      margin-top: 5px !important;
+    }
+    .flex-mismo-alto, .flex-mismo-alto > div[class*='col-'] { 
+        display: inherit; 
+    }
+    .flex-mismo-alto, .flex-mismo-alto > div[class*='col-'] {
+        margin-bottom: 0px;
+    } 
+    .claro-club-cta {
+      margin-right: 0;
+      margin-right: auto;
+      width: 100%;
+      text-align: center;
+    }
+    .qr-claro {
+      padding-right: 0;
+      margin: auto;
+    }
+    .qr-cont {
+    	display:block;
+    }
+    .qr-cont .imagen {
+	  margin:auto;
+	  margin-bottom: 10px;
+	}
+    .claro-club-banner .claro-club-puntos .txt-32 {
+      font-size: 1.50rem;
+      margin: 0px;
+      line-height: 1.87rem;
+    }
+    .claro-club-banner .claro-club-puntos .txt-16 {
+      font-size: 0.87rem;
+      margin: 0px;
+      line-height: 1.25rem;
+    }
+    .boton-centrado-mobile {
+      width: 100%;
+      text-align: center;
+      display: block;
+    }    
+    .centrado-xs {
+      text-align: center;
+    }
+    .claro-club-banner .claro-club-logo {
+      max-width: 180px;
+    }
+    .claro-club-cont-violeta .txt-36 {
+      font-size: 2rem !important;
+    }
+}
+@media (max-width: 320px) {
+  .claro-club-banner .flex-mismo-alto-interno {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  #claroClub .input-group {
+     display: table;
+  }
+}
+button {
+  webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/*=== FIX IE 10 ===*/ 
+html[data-useragent*='MSIE 10.0']  .ayuda-boton::after { 
+  content: url(../img/ayuda-off.png); 
+  width: 25px; 
+}  
+/*====*/
