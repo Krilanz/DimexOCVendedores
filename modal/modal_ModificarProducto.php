@@ -14,6 +14,10 @@
             <input class="form-control" type="text" id="titulo" name="titulo" placeholder="Título" required>
           </div>
           <div class="form-group">
+            <label class="control-label">Código</label>
+            <input class="form-control"  type="text"  id="codigo" name="codigo" rows="3" placeholder="Código"></input>
+          </div>
+          <div class="form-group">
             <label class="control-label">Descripción</label>
             <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Descripción"></textarea>
           </div>
@@ -92,18 +96,20 @@ if(isset($_POST['modificarProducto']))
 
 
 
-       //Creo el nuevo Producto
+       //modifico el Producto
        PodioItem::update(intval($_POST['itemId']), array('fields' => array(
             "titulo" => $_POST['titulo'],
+            "codigo" =>   $_POST['codigo'] != "" ?  $_POST['codigo'] : null ,           
             "descripcion" =>   $_POST['descripcion'] != "" ?  $_POST['descripcion'] : null ,           
             "foto" => $imagenUpload -> file_id 
         )));
 
        unlink($target_file);
     }else{
-            //Creo el nuevo Producto
+            //modifico el Producto
            PodioItem::update(intval($_POST['itemId']), array('fields' => array(
                 "titulo" => $_POST['titulo'],
+                "codigo" =>   $_POST['codigo'] != "" ?  $_POST['codigo'] : null ,        
                 "descripcion" =>   $_POST['descripcion'] != "" ?  $_POST['descripcion'] : null 
             )));
        }

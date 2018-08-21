@@ -13,6 +13,10 @@
             <label class="control-label">Título</label>
             <input class="form-control" type="text" id="titulo" name="titulo" placeholder="Título" required>
           </div>
+           <div class="form-group">
+            <label class="control-label">Código</label>
+            <input class="form-control"  type="text"  id="codigo" name="descripcion" rows="3" placeholder="Código"></input>
+          </div>
           <div class="form-group">
             <label class="control-label">Descripción</label>
             <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Descripción"></textarea>
@@ -102,6 +106,7 @@ if(isset($_POST['agregarProducto']))
        //Creo el nuevo Producto
        PodioItem::create($appProductos_id, array('fields' => array(
             "titulo" => $_POST['titulo'],
+            "codigo" =>   $_POST['codigo'] != "" ?  $_POST['codigo'] : null ,           
             "descripcion" =>   $_POST['descripcion'] != "" ?  $_POST['descripcion'] : null ,           
             "foto" => $imagenUpload -> file_id 
         )));
@@ -111,6 +116,7 @@ if(isset($_POST['agregarProducto']))
             //Creo el nuevo Producto
            PodioItem::create($appProductos_id, array('fields' => array(
                 "titulo" => $_POST['titulo'],
+                "codigo" =>   $_POST['codigo'] != "" ?  $_POST['codigo'] : null ,
                 "descripcion" =>   $_POST['descripcion'] != "" ?  $_POST['descripcion'] : null 
             )));
        }

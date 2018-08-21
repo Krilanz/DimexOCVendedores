@@ -84,6 +84,7 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
                 <thead>
                   <tr>
                     <th>Título</th>
+                    <th>Código</th>
                     <th>Descripción</th>
                     <th>Acciones</th>
                   </tr>
@@ -96,11 +97,13 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
                     ?>
                       <tr>                            
                             <td><?php echo $item->fields["titulo"]  == null ? "" : $item->fields["titulo"]-> values ?></td>
+                            <td><?php echo $item->fields["codigo"]  == null ? "" : $item->fields["codigo"]-> values ?></td>
                             <td><?php echo $item->fields["descripcion"]  == null ? "" : $item->fields["descripcion"]-> values ?></td>
                             <td>
                                 <a type="button" class="btn btn-info" data-toggle="modal" data-target="#dataUpdate" 
                                    data-itemId="<?php echo $item -> item_id ?>" 
                                    data-titulo="<?php echo $item->fields["titulo"]  == null ? "" : $item->fields["titulo"]-> values ?>" 
+                                   data-codigo="<?php echo $item->fields["codigo"]  == null ? "" : $item->fields["codigo"]-> values  ?>" 
                                    data-descripcion="<?php echo $item->fields["descripcion"]  == null ? "" : $item->fields["descripcion"]-> values  ?>" 
                                 >Modificar</a>
                                 <a>  </a>
@@ -169,12 +172,14 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
             var button = $(event.relatedTarget) // Botón que activó el modal
             var id = button.data('itemid') // Extraer la información de atributos de datos
             var titulo = button.data('titulo') // Extraer la información de atributos de datos
+            var codigo = button.data('codigo') // Extraer la información de atributos de datos    
             var descripcion = button.data('descripcion') // Extraer la información de atributos de datos
            
 
             var modal = $(this)            
             modal.find('.modal-body #itemId').val(id).change();
             modal.find('.modal-body #titulo').val(titulo).change();
+            modal.find('.modal-body #codigo').val(codigo).change();
             modal.find('.modal-body #descripcion').val(descripcion).change();
             $('.alert').hide();//Oculto alert
         })
