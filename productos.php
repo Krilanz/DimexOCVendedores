@@ -107,7 +107,7 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
                                    data-descripcion="<?php echo $item->fields["descripcion"]  == null ? "" : $item->fields["descripcion"]-> values  ?>" 
                                 >Modificar</a>
                                 <a>  </a>
-                                <!--<a type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataDelete" data-itemId="<?php echo $item -> app_item_id?>"  >Eliminar</a>-->
+                                <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataDelete" data-itemId="<?php echo $item -> app_item_id?>"  >Eliminar</a>
                             </td>
                         </tr>
                     <?php

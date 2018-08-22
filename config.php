@@ -2,8 +2,8 @@
 require_once 'podio-php/PodioAPI.php';
 
 $webOC = 'http://dimex.innen.com.ar/OrdenesDeCompraTest';
-$client_id = 'ordendecompra';
-$client_secret = 'sd1eDVaKMw4K9iYSuaA4z7BlKeul4k8SfOszGFlQWJ7Fk1bz3m3v3eRsDJuPtLZm';
+$client_id = 'ordendecompra-gjip9s';
+$client_secret = 'IxmViVQZGEpH0xE9zJ79IYMwr8rNq4VcaL7aDzrYBKbXo6p3ct5Ud3Xxl4t7EjWk';
 
 
 //Produccion
