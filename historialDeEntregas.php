@@ -133,11 +133,15 @@ if(isset($_GET['descargarPDF']))
                             <td>
                                <select class="form-control selectpicker"  data-width="120px" name='selectPDF<?php echo $i ?>' id='selectPDF<?php echo $i ?>'  >
                                 <?php
-                                    foreach ($files as $detalle) { 
-                                        if($detalle -> context["id"] == $item -> item_id){
-                                        ?>                          
-                                         <option id="<?php echo $detalle -> file_id ?>" value="<?php echo $detalle -> file_id ?>" > <?php echo $detalle -> name ?> </option> 
-                                        <?php
+                                    foreach ($itemsFacturas as $fact) {
+                                        if($item->fields["oc"] == $fact->fields["oc"]){
+                                            foreach ($files as $detalle) { 
+                                                if($detalle -> context["id"] == $fact -> item_id){
+                                                ?>                          
+                                                 <option id="<?php echo $detalle -> file_id ?>" value="<?php echo $detalle -> file_id ?>" > <?php echo $detalle -> name ?> </option> 
+                                                <?php
+                                                }
+                                            }
                                         }
                                     }
                                 ?>
