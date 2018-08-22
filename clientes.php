@@ -28,8 +28,8 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
     <link rel="stylesheet" href="css/sweetalert2.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    
+
+
   </head>
   <body class="app sidebar-mini rtl">
   <?php
@@ -42,14 +42,14 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
           <p></p>
         </div>
       </div>
-      <?php include("modal/modal_AgregarCliente.php");?> 
-      <?php include("modal/modal_ModificarCliente.php");?> 
-      <?php include("modal/modal_EliminarCliente.php");?> 
-        
-      <div class="form-group col-md-3">  
+      <?php include("modal/modal_AgregarCliente.php");?>
+      <?php include("modal/modal_ModificarCliente.php");?>
+      <?php include("modal/modal_EliminarCliente.php");?>
+
+      <div class="form-group col-md-3">
           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataRegister"><i class='glyphicon glyphicon-plus'></i> Nuevo Cliente</button>
-      </div> 
-        
+      </div>
+
       <div class="row">
         <div class="row">
         <!--<div class="col-md-4">
@@ -81,7 +81,7 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
                         <label class="control-label">Dirección Fiscal</label>
                         <input class="form-control" type="text" id="direccionFiscal" name="direccionFiscal" rows="3" placeholder="">
                       </div>
-                        
+
                       <div class="form-group">
                         <label class="control-label">Dirección Entrega</label>
                         <input class="form-control" type="text" id="direccionEntrega" name="direccionEntrega" rows="3" placeholder="">
@@ -91,8 +91,8 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
                       </div>
                     </form>
                   </div>
-                  
-          </div>  
+
+          </div>
         </div>-->
         <div class="col-md-12">
           <div class="tile">
@@ -115,49 +115,49 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
                 <tbody>
                    <?php
                     foreach ($itemsClientes as $item) {
-                        
+
                     ?>
-                      <tr>                            
+                      <tr>
                             <td><?php echo $item->fields["titulo"]  == null ? "" : $item->fields["titulo"]-> values ?></td>
-                            <td><?php echo $item->fields["razon-social"]  == null ? "" : $item->fields["razon-social"]-> values ?></td>    
-                            <td><?php echo $item->fields["cuit"]  == null ? "" : intval($item->fields["cuit"]-> values) ?></td>    
-                            <td><?php echo $item->fields["telefono"]  == null ? "" : $item->fields['telefono'] -> values[0]["value"] ?></td>    
-                            <td><?php echo $item->fields["email"]  == null ? "" : $item->fields['email'] -> values[0]["value"] ?></td>     
-                            <td><?php echo $item->fields["direccion"]  == null ? "" : $item->fields["direccion"]-> values["value"] ?></td>    
-                            <td><?php echo $item->fields["donde-se-entrega"]  == null ? "" : $item->fields["donde-se-entrega"]-> values["value"] ?></td>  
-                            <td><?php echo $item->fields["transporte"]  == null ? "" : $item->fields["transporte"]-> values ?></td>    
-                            <td><?php echo $item->fields["forma-de-pago"]  == null ? "" : $item->fields["forma-de-pago"]-> values ?></td>    
+                            <td><?php echo $item->fields["razon-social"]  == null ? "" : $item->fields["razon-social"]-> values ?></td>
+                            <td><?php echo $item->fields["cuit"]  == null ? "" : intval($item->fields["cuit"]-> values) ?></td>
+                            <td><?php echo $item->fields["telefono"]  == null ? "" : $item->fields['telefono'] -> values[0]["value"] ?></td>
+                            <td><?php echo $item->fields["email"]  == null ? "" : $item->fields['email'] -> values[0]["value"] ?></td>
+                            <td><?php echo $item->fields["direccion"]  == null ? "" : $item->fields["direccion"]-> values["value"] ?></td>
+                            <td><?php echo $item->fields["donde-se-entrega"]  == null ? "" : $item->fields["donde-se-entrega"]-> values["value"] ?></td>
+                            <td><?php echo $item->fields["transporte"]  == null ? "" : $item->fields["transporte"]-> values ?></td>
+                            <td><?php echo $item->fields["forma-de-pago"]  == null ? "" : $item->fields["forma-de-pago"]-> values ?></td>
                             <td>
-                                <a type="button" class="btn btn-info" data-toggle="modal" data-target="#dataUpdate" 
-                                   data-itemId="<?php echo $item -> item_id ?>" 
-                                   data-nombreComercial="<?php echo $item->fields["titulo"]  == null ? "" : $item->fields["titulo"]-> values ?>" 
-                                   data-razonSocial="<?php echo $item->fields["razon-social"]  == null ? "" : $item->fields["razon-social"]-> values ?>" 
-                                   data-cuit="<?php echo $item->fields["cuit"]  == null ? "" : $item->fields["cuit"]-> values ?>" 
-                                   data-telefono="<?php echo $item->fields["telefono"]  == null ? "" : $item->fields['telefono'] -> values[0]["value"]?>" 
-                                   data-email="<?php echo $item->fields["email"]  == null ? "" : $item->fields['email'] -> values[0]["value"] ?>" 
-                                   data-direccion="<?php echo  $item->fields["direccion"]  == null ? "" : $item->fields["direccion"]-> values["value"]  ?>" 
-                                   data-dondeSeEntrega="<?php echo $item->fields["donde-se-entrega"]  == null ? "" : $item->fields["donde-se-entrega"]-> values["value"]  ?>" 
-                                   data-transporte="<?php echo $item->fields["transporte"]  == null ? "" : $item->fields["transporte"]-> values ?>" 
-                                   data-formaDePago="<?php echo $item->fields["forma-de-pago"]  == null ? "" : $item->fields["forma-de-pago"]-> values ?>" 
+                                <a type="button" class="btn btn-info" data-toggle="modal" data-target="#dataUpdate"
+                                   data-itemId="<?php echo $item -> item_id ?>"
+                                   data-nombreComercial="<?php echo $item->fields["titulo"]  == null ? "" : $item->fields["titulo"]-> values ?>"
+                                   data-razonSocial="<?php echo $item->fields["razon-social"]  == null ? "" : $item->fields["razon-social"]-> values ?>"
+                                   data-cuit="<?php echo $item->fields["cuit"]  == null ? "" : $item->fields["cuit"]-> values ?>"
+                                   data-telefono="<?php echo $item->fields["telefono"]  == null ? "" : $item->fields['telefono'] -> values[0]["value"]?>"
+                                   data-email="<?php echo $item->fields["email"]  == null ? "" : $item->fields['email'] -> values[0]["value"] ?>"
+                                   data-direccion="<?php echo  $item->fields["direccion"]  == null ? "" : $item->fields["direccion"]-> values["value"]  ?>"
+                                   data-dondeSeEntrega="<?php echo $item->fields["donde-se-entrega"]  == null ? "" : $item->fields["donde-se-entrega"]-> values["value"]  ?>"
+                                   data-transporte="<?php echo $item->fields["transporte"]  == null ? "" : $item->fields["transporte"]-> values ?>"
+                                   data-formaDePago="<?php echo $item->fields["forma-de-pago"]  == null ? "" : $item->fields["forma-de-pago"]-> values ?>"
                                 >Modificar</a>
                                 <a>  </a>
-                                <!--<a type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataDelete" data-itemId="<?php echo $item -> app_item_id?>"  >Eliminar</a> -->
+                                <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataDelete" data-itemId="<?php echo $item -> app_item_id?>" >Eliminar</a>
                             </td>
                         </tr>
                     <?php
                     }
                     ?>
-                  
+
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-      </div> 
-        
-        
-        
-        
+      </div>
+
+
+
+
     </main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -201,7 +201,7 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
                     }
                 }
             });
-          
+
         //var placeSearch, autocomplete, geocoder;
 
         function initAutocomplete() {
@@ -210,23 +210,23 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
               (document.getElementById('direccionFiscal')));
 
           autocomplete.addListener('place_changed', fillInAddress);
-          
+
           autocomplete2 = new google.maps.places.Autocomplete(
               (document.getElementById('direccionEntrega')));
 
           autocomplete2.addListener('place_changed', fillInAddress);
-          
+
           autocomplete3 = new google.maps.places.Autocomplete(
               (document.getElementById('direccionFiscal2')));
 
           autocomplete3.addListener('place_changed', fillInAddress);
-          
+
           autocomplete4 = new google.maps.places.Autocomplete(
               (document.getElementById('direccionEntrega2')));
 
           autocomplete4.addListener('place_changed', fillInAddress);
         }
-        
+
         function codeAddress(address) {
             geocoder.geocode( { 'address': address}, function(results, status) {
               if (status == 'OK') {
@@ -242,7 +242,7 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
           //alert(place.place_id);
           //codeAddress(document.getElementById('autocomplete').value);
         }
-        
+
         $('#dataUpdate').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Botón que activó el modal
             var id = button.data('itemid') // Extraer la información de atributos de datos
@@ -251,12 +251,12 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
             var cuit = button.data('cuit') // Extraer la información de atributos de datos
             var telefono = button.data('telefono') // Extraer la información de atributos de datos
             var email = button.data('email') // Extraer la información de atributos de datos
-            var direccion = button.data('direccion') // Extraer la información de atributos de datos    
-            var dondeSeEntrega = button.data('dondeseentrega') // Extraer la información de atributos de datos    
-            var transporte = button.data('transporte') // Extraer la información de atributos de datos    
-            var formaDePago = button.data('formadepago') // Extraer la información de atributos de datos   
+            var direccion = button.data('direccion') // Extraer la información de atributos de datos
+            var dondeSeEntrega = button.data('dondeseentrega') // Extraer la información de atributos de datos
+            var transporte = button.data('transporte') // Extraer la información de atributos de datos
+            var formaDePago = button.data('formadepago') // Extraer la información de atributos de datos
 
-            var modal = $(this)            
+            var modal = $(this)
             modal.find('.modal-body #itemId').val(id).change();
             modal.find('.modal-body #nombreComercial').val(nombreComercial).change();
             modal.find('.modal-body #razonSocial').val(razonSocial).change();
@@ -267,7 +267,7 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
             modal.find('.modal-body #direccionEntrega').val(dondeSeEntrega).change();
             modal.find('.modal-body #transporte').val(transporte).change();
             modal.find('.modal-body #formaDePago').val(formaDePago).change();
-            
+
             $('.alert').hide();//Oculto alert
         })
 
@@ -277,7 +277,7 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
           var modal = $(this)
           modal.find('#itemId').val(id)
         })
-        
+
         $(document).ready(function() {
             $(window).keydown(function(event){
               if(event.keyCode == 13) {
@@ -286,12 +286,14 @@ $itemsClientes = PodioItem::filter($appClientes_id ,array('limit' => 500));
               }
             });
           });
+
+
     </script>
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPpGUzmkPjLfYHzTTuDZ02jPNQGaKJBdU&libraries=places&callback=initAutocomplete" async defer></script>
     <script type="text/javascript" src="js/plugins/select2.min.js"></script>
-    
+
   </body>
 </html>
 
@@ -308,7 +310,7 @@ if ($_SESSION['NuevoCliente'] != null && $_SESSION['NuevoCliente'] == 1) {
     echo '<script language="javascript">';
     echo 'swal("Nuevo Cliente","Cliente cargado con exito!","success")';
     echo '</script>';
-   
+
 }
 
 
@@ -317,7 +319,7 @@ if ($_SESSION['ClienteEliminado'] != null && $_SESSION['ClienteEliminado'] == 1)
     echo '<script language="javascript">';
     echo 'swal("Cliente Eliminado","Cliente eliminado con exito!","success")';
     echo '</script>';
-   
+
 }
 
 if ($_SESSION['ClienteModificado'] != null && $_SESSION['ClienteModificado'] == 1) {
@@ -325,23 +327,23 @@ if ($_SESSION['ClienteModificado'] != null && $_SESSION['ClienteModificado'] == 
     echo '<script language="javascript">';
     echo 'swal("Cliente Modificado","Cliente modificado con exito!","success")';
     echo '</script>';
-   
+
 }
 
 /*
 if(isset($_POST['submit']))
 {
-    try {       
+    try {
 
        //Creo el nuevo Cliente
        PodioItem::create($appClientes_id, array('fields' => array(
             "titulo" => $_POST['nombreComercial'],
-            "razon-social" =>   $_POST['razonSocial'] == "" ? null : $_POST['razonSocial'] ,            
+            "razon-social" =>   $_POST['razonSocial'] == "" ? null : $_POST['razonSocial'] ,
             "cuit" => $_POST['cuit'] == "" ? null : intval($_POST['cuit'])  ,
             "telefono" => $_POST['telefono'] == "" ? null :  array('type' => 'work'  , "value" => $_POST['telefono'])    ,
             "email" => $_POST['email'] == "" ? null :  array('type' => 'work'  , "value" => $_POST['email'])  ,
             "direccion" => $_POST['direccionFiscal'] == "" ? null : $_POST['direccionFiscal'] ,
-            "donde-se-entrega" => $_POST['direccionEntrega'] == "" ? null :  $_POST['direccionEntrega'] 
+            "donde-se-entrega" => $_POST['direccionEntrega'] == "" ? null :  $_POST['direccionEntrega']
         )));
 
     } catch (Exception $e) {
@@ -350,17 +352,15 @@ if(isset($_POST['submit']))
         echo '</script>';
         return;
     }
- 
+
    $_SESSION['NuevoCliente'] = 1;
    echo '<script language="javascript">';
    echo ' window.location.href = "clientes.php" ; ';
    echo '</script>';
-   
-   
+
+
 
 }
 */
 
 ?>
-
-

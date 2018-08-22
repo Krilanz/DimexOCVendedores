@@ -66,13 +66,9 @@ if(isset($_GET['descargarPDF']))
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-book"></i> Ordenes de Compra</h1>
+          <h1><i class="fa fa-history"></i> Histórico de OCs</h1>
           <p></p>
         </div>
-      </div>
-
-      <div class="form-group col-md-3">
-          <a class="btn btn-primary" target="_blank" href="http://dimex.innen.com.ar/OrdenesDeCompraTest/Index.php">Nueva Orden de Compra</a>
       </div>
 
       <div class="row">
@@ -92,7 +88,6 @@ if(isset($_GET['descargarPDF']))
                     <th>Status</th>
                     <th>PDF</th>
                     <th>Link</th>
-                    <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -128,13 +123,6 @@ if(isset($_GET['descargarPDF']))
                               <a href="javascript:void(0);" id="<?php echo $i ?>" onclick="DescargarPDF(this.id)">Descargar</a>
                             </td>
                             <td><a target="_blank" href="<?php echo $item->fields["link-3"] == null ? "" : $item->fields["link-3"]-> values ?>" id="<?php $item -> item_id ?>">OC LINK</a></td>
-                            <td>
-                                <a href="historialDeEntregas.php?Id=<?php echo $item -> item_id ?>">Historial de Entregas</a>
-                                <a> | </a>
-                                <a href="ordenesDeCompra.php?archivar=<?php echo $item->fields["id-pedido-3"] == null ? "" : intval($item->fields["id-pedido-3"]-> values) ?>">Archivar</a>
-                                <a> | </a>
-                                <a href="ordenesDeCompra.php?anular2=<?php echo $item->fields["id-pedido-3"] == null ? "" : intval($item->fields["id-pedido-3"]-> values) ?>">Anular</a>
-                            </td>
                         </tr>
                     <?php
                     $i++;
@@ -169,6 +157,9 @@ if(isset($_GET['descargarPDF']))
     <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript">
         $('#table').DataTable({
+          "paging":   false,
+        "ordering": false,
+        "info":     false
                 "language": {
                     "sProcessing":    "Procesando...",
                     "sLengthMenu":    "Mostrar _MENU_ registros",
@@ -223,33 +214,6 @@ if(isset($_GET['descargarPDF']))
   </body>
 </html>
 
-<?php
-
-if(isset($_GET['NuevaFactura']) && $_SESSION['NuevaFactura'] != 0 ){
-    $_SESSION['NuevaFactura'] = 0;
-    echo '<script language="javascript">';
-    echo 'swal( "Nueva Factura","La factura fue creada con exito!.","success" )';
-    echo '</script>';
-}
-
-if ($_SESSION['OCAnulada'] == 1) {
-    $_SESSION['OCAnulada'] = 0;
-    echo '<script language="javascript">';
-    echo 'swal( "OC Anulada","La orden de compra fue anulada correctamente.","success" )';
-    echo '</script>';
-}
-
-if ($_SESSION['OCArchivada'] == 1) {
-    $_SESSION['OCArchivada'] = 0;
-    echo '<script language="javascript">';
-    echo 'swal( "OC Archivada","La orden de compra fue archivada correctamente.","success" )';
-    echo '</script>';
-}
-
-
-if (isset($_GET['anular2'])) {
-
-    echo "
 <script src='js/jquery-3.3.1.min.js'></script>
 <script language='javascript'>
 
@@ -272,61 +236,3 @@ if (isset($_GET['anular2'])) {
     })  </script>" ;
 
 }
-
-
-if (isset($_GET['anular'])) {
-
-
-
-    $ordenVieja = PodioItem::get_by_app_item_id( $appOrdenDeCompra_id, intval($_GET['anular']));
-
-
-    Podio::authenticate_with_app($appPedido_id, $appPedido_token);
-
-
-    $detalles = PodioItem::filter($appPedido_id, [
-        'filters' => [
-            'oc' => $ordenVieja-> item_id
-        ],
-        'limit' => 500
-    ]);
-    foreach ($detalles as $detalle) {
-        PodioItem::delete($detalle -> item_id);
-    }
-
-    Podio::authenticate_with_app($appOrdenDeCompra_id, $appOrdenDeCompra_token);
-
-    PodioItem::delete($ordenVieja-> item_id);
-
-
-
-
-    /*PodioItem::update($ordenVieja-> item_id, array('fields' => array(
-            "oc-status" => 4
-        )));*/
-
-   $_SESSION['OCAnulada'] = 1;
-   echo '<script language="javascript">';
-   echo ' window.location.href = "ordenesDeCompra.php" ; ';
-   echo '</script>';
-}
-
-
-if (isset($_GET['archivar'])) {
-
-
-
-    $ordenVieja = PodioItem::get_by_app_item_id( $appOrdenDeCompra_id, intval($_GET['archivar']));
-
-
-    PodioItem::update($ordenVieja-> item_id, array('fields' => array(
-            "oc-status" => 5
-        )));
-
-    $_SESSION['OCArchivada'] = 1;
-    echo '<script language="javascript">';
-    echo ' window.location.href = "ordenesDeCompra.php" ; ';
-    echo '</script>';
-}
-
-?>

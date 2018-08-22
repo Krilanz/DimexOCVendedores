@@ -28,7 +28,7 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
     <link rel="stylesheet" href="css/sweetalert2.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
   </head>
   <body class="app sidebar-mini rtl">
   <?php
@@ -41,15 +41,15 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
           <p></p>
         </div>
       </div>
-        
-      <?php include("modal/modal_AgregarProducto.php");?> 
-      <?php include("modal/modal_ModificarProducto.php");?> 
-      <?php include("modal/modal_EliminarProducto.php");?> 
-      
-      <div class="form-group col-md-3">  
+
+      <?php include("modal/modal_AgregarProducto.php");?>
+      <?php include("modal/modal_ModificarProducto.php");?>
+      <?php include("modal/modal_EliminarProducto.php");?>
+
+      <div class="form-group col-md-3">
           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#dataRegister"><i class='glyphicon glyphicon-plus'></i> Nuevo Producto</button>
-      </div> 
-        
+      </div>
+
       <div class="row">
         <div class="row">
         <!--<div class="col-md-5">
@@ -74,7 +74,7 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
                       </div>
                     </form>
                   </div>
-                  
+
           </div>
         </div>-->
         <div class="col-md-12">
@@ -92,38 +92,38 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
                 <tbody>
                    <?php
                     foreach ($itemsProductos as $item) {
-                    
-                        
+
+
                     ?>
-                      <tr>                            
+                      <tr>
                             <td><?php echo $item->fields["titulo"]  == null ? "" : $item->fields["titulo"]-> values ?></td>
                             <td><?php echo $item->fields["codigo"]  == null ? "" : $item->fields["codigo"]-> values ?></td>
                             <td><?php echo $item->fields["descripcion"]  == null ? "" : $item->fields["descripcion"]-> values ?></td>
                             <td>
-                                <a type="button" class="btn btn-info" data-toggle="modal" data-target="#dataUpdate" 
-                                   data-itemId="<?php echo $item -> item_id ?>" 
-                                   data-titulo="<?php echo $item->fields["titulo"]  == null ? "" : $item->fields["titulo"]-> values ?>" 
-                                   data-codigo="<?php echo $item->fields["codigo"]  == null ? "" : $item->fields["codigo"]-> values  ?>" 
-                                   data-descripcion="<?php echo $item->fields["descripcion"]  == null ? "" : $item->fields["descripcion"]-> values  ?>" 
+                                <a type="button" class="btn btn-info" data-toggle="modal" data-target="#dataUpdate"
+                                   data-itemId="<?php echo $item -> item_id ?>"
+                                   data-titulo="<?php echo $item->fields["titulo"]  == null ? "" : $item->fields["titulo"]-> values ?>"
+                                   data-codigo="<?php echo $item->fields["codigo"]  == null ? "" : $item->fields["codigo"]-> values  ?>"
+                                   data-descripcion="<?php echo $item->fields["descripcion"]  == null ? "" : $item->fields["descripcion"]-> values  ?>"
                                 >Modificar</a>
                                 <a>  </a>
-                                <!--<a type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataDelete" data-itemId="<?php echo $item -> app_item_id?>"  >Eliminar</a>-->
+                                <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#dataDelete" data-itemId="<?php echo $item -> app_item_id?>"  >Eliminar</a>
                             </td>
                         </tr>
                     <?php
                     }
                     ?>
-                  
+
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-      </div> 
-        
-        
-        
-        
+      </div>
+
+
+
+
     </main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -167,16 +167,16 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
                     }
                 }
             });
-            
+
         $('#dataUpdate').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Botón que activó el modal
             var id = button.data('itemid') // Extraer la información de atributos de datos
             var titulo = button.data('titulo') // Extraer la información de atributos de datos
-            var codigo = button.data('codigo') // Extraer la información de atributos de datos    
+            var codigo = button.data('codigo') // Extraer la información de atributos de datos
             var descripcion = button.data('descripcion') // Extraer la información de atributos de datos
-           
 
-            var modal = $(this)            
+
+            var modal = $(this)
             modal.find('.modal-body #itemId').val(id).change();
             modal.find('.modal-body #titulo').val(titulo).change();
             modal.find('.modal-body #codigo').val(codigo).change();
@@ -190,7 +190,7 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
           var modal = $(this)
           modal.find('#itemId').val(id)
         })
-        
+
         $(document).ready(function() {
             $(window).keydown(function(event){
               if(event.keyCode == 13) {
@@ -199,13 +199,13 @@ $itemsProductos = PodioItem::filter($appProductos_id, array('limit' => 500));
               }
             });
           });
-          
+
     </script>
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
 
     <script type="text/javascript" src="js/plugins/select2.min.js"></script>
-    
+
   </body>
 </html>
 
@@ -217,7 +217,7 @@ if ($_SESSION['NuevoProducto'] == 1) {
     echo '<script language="javascript">';
     echo 'swal("Nuevo Producto","Producto cargado con exito!","success")';
     echo '</script>';
-   
+
 }
 
 
@@ -227,7 +227,7 @@ if ($_SESSION['ProductoEliminado'] != null && $_SESSION['ProductoEliminado'] == 
     echo '<script language="javascript">';
     echo 'swal("Producto Eliminado","Producto eliminado con exito!","success")';
     echo '</script>';
-   
+
 }
 
 if ($_SESSION['ProductoModificado'] != null && $_SESSION['ProductoModificado'] == 1) {
@@ -235,13 +235,13 @@ if ($_SESSION['ProductoModificado'] != null && $_SESSION['ProductoModificado'] =
     echo '<script language="javascript">';
     echo 'swal("Producto Modificado","Producto modificado con exito!","success")';
     echo '</script>';
-   
+
 }
 
 /*
 if(isset($_POST['submit']))
 {
-    try { 
+    try {
       if($_FILES["imagen"]["name"]!= ""){
         $target_dir = "uploads/";
         $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
@@ -249,7 +249,7 @@ if(isset($_POST['submit']))
 
         // Check if image file is a actual image or fake image
         $check = getimagesize($_FILES["imagen"]["tmp_name"]);
-        if($check == false) {       
+        if($check == false) {
             echo '<script language="javascript">';
             echo 'swal("Error","El archivo de imagen tiene que ser una imagen.","error")';
             echo '</script>';
@@ -294,8 +294,8 @@ if(isset($_POST['submit']))
        //Creo el nuevo Producto
        PodioItem::create($appProductos_id, array('fields' => array(
             "titulo" => $_POST['titulo'],
-            "descripcion" =>   $_POST['descripcion'] != "" ?  $_POST['descripcion'] : null ,           
-            "foto" => $imagenUpload -> file_id 
+            "descripcion" =>   $_POST['descripcion'] != "" ?  $_POST['descripcion'] : null ,
+            "foto" => $imagenUpload -> file_id
         )));
 
        unlink($target_file);
@@ -303,29 +303,27 @@ if(isset($_POST['submit']))
             //Creo el nuevo Producto
            PodioItem::create($appProductos_id, array('fields' => array(
                 "titulo" => $_POST['titulo'],
-                "descripcion" =>   $_POST['descripcion'] != "" ?  $_POST['descripcion'] : null 
+                "descripcion" =>   $_POST['descripcion'] != "" ?  $_POST['descripcion'] : null
             )));
        }
-       
+
     } catch (Exception $e) {
         echo '<script language="javascript">';
         echo 'swal("Error","Hubo un error al guardar el nuevo producto.","error")';
         echo '</script>';
         return;
     }
-   
-   
+
+
    $_SESSION['NuevoProducto'] = 1;
    echo '<script language="javascript">';
    echo ' window.location.href = "productos.php" ; ';
    echo '</script>';
-   
-   
-   
+
+
+
 
 }*/
 
 
 ?>
-
-
