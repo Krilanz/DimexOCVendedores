@@ -19,7 +19,7 @@ $itemsOrdenDeCompra = PodioItem::filter($appOrdenDeCompra_id, [
             'oc-status' => [1,2,3]
         ],
         'limit' => 500
-    ]);
+    ], array('fields' => 'items.fields(files)'));
 
 
 
@@ -98,9 +98,17 @@ if(isset($_GET['descargarPDF']))
                 <tbody>
                    <?php
                     $i = 0;
-                    $files = PodioFile::get_for_app( $appOrdenDeCompra_id , array('limit' => 100)) ;
+                    ///$files = PodioFile::get_for_app( $appOrdenDeCompra_id , array('limit' => 100)) ;
+                    
+                    /*$files = PodioFile::fi($appOrdenDeCompra_id, [
+                        'filters' => [
+                            'vendio-2' => $_SESSION['userId'],    
+                            'oc-status' => [1,2,3]
+                        ],
+                        'limit' => 500
+                    ]);*/
                     foreach ($itemsOrdenDeCompra as $item) {
-                        //$detalles = PodioItem::get_by_app_item_id( $appOrdenDeCompra_id , $item -> app_item_id) ;
+                        //$itemOrdenDeCompra = PodioItem::get_by_app_item_id( $appOrdenDeCompra_id , $item -> app_item_id) ;
                         $items['Articulos'] = array();
                         
                     ?>
@@ -116,12 +124,12 @@ if(isset($_GET['descargarPDF']))
                             <td>
                                <select class="form-control selectpicker"  data-width="120px" name='selectPDF<?php echo $i ?>' id='selectPDF<?php echo $i ?>'  >
                                 <?php
-                                    foreach ($files  as $detalle) { 
-                                        if($detalle -> context["id"] == $item -> item_id){
+                                    foreach ($item -> files  as $detalle) { 
+                                        //if($detalle -> context["id"] == $item -> item_id){
                                         ?>                          
                                          <option id="<?php echo $detalle -> file_id ?>" value="<?php echo $detalle -> file_id ?>" > <?php echo $detalle -> name ?> </option> 
                                         <?php
-                                        }
+                                        //}
                                     }
                                 ?>
                               </select>
