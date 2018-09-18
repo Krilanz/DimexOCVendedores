@@ -1990,7 +1990,7 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: #FFF;
-  border-color: #009688;
+  border-color: #20B2AA;
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2524,8 +2524,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #FFF;
-  background-color: #009688;
-  border-color: #009688;
+  background-color: #20B2AA;
+  border-color: #20B2AA;
 }
 
 .btn-primary:hover {
@@ -14102,7 +14102,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .material-half-bg .cover {
-  background-color: #009688;
+  background-color: #20B2AA;
   height: 50vh;
 }
 
@@ -14834,4 +14834,50 @@ be a descendant of the grid when it is being dragged.
 
 .notification-show{
     display:block!important;
+}
+
+
+#avisoOC {
+    background-color: rgba(20,20,20,0.8);
+    min-height: 26px;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 26px;
+    padding: 8px 0 8px 30px;
+    font-family: "sans-serif",Helvetica,Trebuchet MS;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 9999;
+}
+#avisoOC a {
+    color: #4B8EE7;
+    text-decoration: none;
+}
+#closeavisoOC {
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin: -15px 0 0 0;
+    font-weight: bold;
+}
+#closeavisoOC:hover {
+    color: #FFF;
+}
+#avisoOC a.avisoOCOK {
+    background-color: #F1D600;
+    color: #000;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0 20px;
+    cursor: pointer;
+    float: right;
+    margin: 0 60px 0 10px;
+}
+#avisoOC a.avisoOCOK:hover {
+    background-color: #E0C91F;
 }

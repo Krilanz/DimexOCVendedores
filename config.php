@@ -8,7 +8,7 @@ $client_secret = 'IxmViVQZGEpH0xE9zJ79IYMwr8rNq4VcaL7aDzrYBKbXo6p3ct5Ud3Xxl4t7Ej
 
 //Produccion
 
-/*
+
 
 $appClientes_id = '20022559';
 $appClientes_token = '96bd3d29940c48efbc9d7b8e2f53a003';
@@ -28,10 +28,10 @@ $appPedido_token = 'ce364c6c0be445d0a78076de2cf2dec3';
 $appProductos_id = '20022555';
 $appProductos_token = 'a12b1afd99374e669220495bc66b0928';
 
-*/
+
 
 //Test
-
+/*
 $appClientes_id = '21251029';
 $appClientes_token = '9b18f439a22d4123b640fba57c932c91';
 
@@ -50,3 +50,5 @@ $appPedido_token = '0e817919e63e4b37934539ebf6a01bdd';
 
 $appProductos_id = '21251026';
 $appProductos_token = '65adea58942847bf932cf4c47d8e26af';
+
+*/

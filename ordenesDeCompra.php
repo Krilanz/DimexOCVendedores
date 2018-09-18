@@ -87,7 +87,6 @@ if(isset($_GET['descargarPDF']))
                     <th>Fecha de Solicitud</th>
                     <th>Fecha de Primera Entrega</th>
                     <th>Cliente</th>
-                    <th>Preparó</th>
                     <th>Porcentaje Entregado</th>
                     <th>Status</th>
                     <th>PDF</th>
@@ -118,7 +117,7 @@ if(isset($_GET['descargarPDF']))
                             <td><?php echo $item->fields["fecha"]-> values["start"] == null ? "" : $item->fields["fecha"]-> values["start"] -> format('Y/m/d') ?></td>
                             <td><?php echo $item->fields["fecha-de-primera-entrega"] == null ? "" : $item->fields["fecha-de-primera-entrega"]-> values["start"] -> format('Y/m/d') ?></td>
                             <td><?php echo $item->fields["cliente"] != null ? $item->fields["cliente"] -> values[0] -> title : ""   ?></td>
-                            <td><?php echo $item->fields["preparo"] == null ? "" : $item->fields["preparo"]-> values ?></td>
+                            <!-- <td><?php //echo $item->fields["preparo"] == null ? "" : $item->fields["preparo"]-> values ?></td> -->
                             <td><?php echo $item->fields["porcentaje-de-entrega"] == null ? "" : $item->fields["porcentaje-de-entrega"]-> values ?></td>
                             <td><?php echo $item->fields["oc-status"] == null ? "" : $item->fields["oc-status"]-> values[0]['text'] ?></td>
                             <td>
@@ -156,7 +155,10 @@ if(isset($_GET['descargarPDF']))
         </div>
       </div> 
         
-        
+        <div id="avisoOC">
+          <div id="closeavisoOC">x</div>
+          Recuerden primero realizar la OC sin ninguna entrega y guardarla. Y posteriormente, una vez que se vayan realizando las entregas, ir a "OC link" de cada OC, e ir completando los campos "cantidad en presente entrega" y "fecha de entrega" de cada producto, según corresponda. Muchas gracias. 
+      </div>
         
         
     </main>
@@ -227,7 +229,17 @@ if(isset($_GET['descargarPDF']))
     <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
 
     <script type="text/javascript" src="js/plugins/select2.min.js"></script>
-    
+	
+    <script>
+     $(document).ready(function(){
+    setTimeout(function () {
+        $("#avisoOC").fadeIn(200);
+     }, 4000);
+    $("#closeavisoOC, .avisoOCOK").click(function() {
+        $("#avisoOC").fadeOut(200);
+    });
+});
+</script>
   </body>
 </html>
 

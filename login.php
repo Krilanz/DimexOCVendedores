@@ -19,7 +19,7 @@
     </section>
     <section class="login-content">
       <div class="logo">
-        <h1>Dimex - OC Vendedores</h1>
+        <img src="../DimexOCVendedores/images/logo.png"/>
       </div>
       <div class="login-box">
         <form class="login-form" method="post">
